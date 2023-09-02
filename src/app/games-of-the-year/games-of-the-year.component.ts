@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { YearsOfTheGames } from './years-of-thegames.interface';
 
 @Component({
   selector: 'app-games-of-the-year',
@@ -7,4 +8,30 @@ import { Component } from '@angular/core';
 })
 export class GamesOfTheYearComponent {
 
+  selectedYear!:string;
+
+
+  years: YearsOfTheGames[] = [
+    {value: 'all-time', viewValue: 'All Time'},
+    {value: 'upcoming', viewValue: 'Upcoming'},
+    {value: 'last-90days', viewValue: 'Last 90 days'},
+    {value: 'year-2023', viewValue: '2023'},
+    {value: 'year-2022', viewValue: '2022'},
+    {value: 'year-2021', viewValue: '2021'},
+    {value: 'year-2020', viewValue: '2020'},
+    {value: 'year-2019', viewValue: '2019'},
+    {value: 'year-2018', viewValue: '2018'},
+    {value: 'year-2017', viewValue: '2017'},
+    {value: 'year-2016', viewValue: '2016'},
+    {value: 'year-2015', viewValue: '2015'},
+    {value: 'year-2014', viewValue: '2014'},
+    {value: 'year-2013', viewValue: '2013'},
+  ]
+
+  getValue(): string {
+
+    console.log(this.selectedYear)
+    return this.selectedYear;
+  }
+  
 }
