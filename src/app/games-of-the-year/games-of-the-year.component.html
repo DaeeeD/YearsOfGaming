@@ -1,12 +1,15 @@
 <div class="centerDiv">
     <mat-form-field>
         <mat-label>Years</mat-label>
-        <mat-select [(ngModel)]="selectedYear" (selectionChange)="getValue()">
+        <mat-select [(ngModel)]="selectedYear" (selectionChange)="getYear()">
             <mat-option *ngFor="let year of years" [value]="year.viewValue">
                 {{year.viewValue}}
             </mat-option>
         </mat-select>
     </mat-form-field>
+    <div *ngIf="selectChange">
+        <app-opencritic-fetched [testOfTheYear]="selectedYear"></app-opencritic-fetched>
+    </div>
 </div>
 
 

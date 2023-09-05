@@ -8,6 +8,8 @@ import { YearsOfTheGames } from './years-of-thegames.interface';
 })
 export class GamesOfTheYearComponent {
 
+  selectChange: boolean = false;
+
   selectedYear!:string;
 
 
@@ -28,10 +30,15 @@ export class GamesOfTheYearComponent {
     {value: 'year-2013', viewValue: '2013'},
   ]
 
-  getValue(): string {
 
-    console.log(this.selectedYear)
+  //get the year to the api request to fetch the game 
+  //put it in the service ? 
+  
+  getYear(): string {
+
+    this.selectChange = true;
     return this.selectedYear;
+
   }
   
 }

@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GamesOfTheYearContentComponent } from './games-of-the-year/games-of-the-year-content/games-of-the-year-content.component/games-of-the-year-content.component';
+import { OpencriticFetchedComponent } from './games-of-the-year/games-of-the-year-content/games-of-the-year-content.component/opencritic-fetched/opencritic-fetched.component';
 import { GamesOfTheYearComponent } from './games-of-the-year/games-of-the-year.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
@@ -16,7 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     HomePageComponent,
     GamesOfTheYearComponent,
-    GamesOfTheYearContentComponent,
+    OpencriticFetchedComponent,
 
   ],
   imports: [
