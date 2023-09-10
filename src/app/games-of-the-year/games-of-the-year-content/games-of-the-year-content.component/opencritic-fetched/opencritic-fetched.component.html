@@ -1,1 +1,18 @@
-<p> if it work....{{testOfTheYear}}</p>
+
+<mat-card class="cardgame">
+    <mat-card-title>Here the list of games & images</mat-card-title>
+    <mat-card-content>
+        <p>{{testOfTheYear}}</p>
+        <ul>
+            <li *ngFor="let game of games">
+                <span>{{game.id}} </span>
+                <span>{{game.name}} </span>
+                <span>{{game.url}} </span>
+                <span>{{game.firstReleaseDate | date: 'd/M/yy'}} </span>
+                <span>{{game.topCriticScore}} </span>
+                <span>{{game.tier}} </span>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>
+

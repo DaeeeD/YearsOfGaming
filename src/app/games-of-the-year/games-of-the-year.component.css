@@ -1,10 +1,6 @@
-.centerDiv {
-
-    position: absolute;
-    top: 10%;
-    left: 0;
-}
 
 .buttonYears {
-    position: relative;
+    position: absolute;
+    top: 6%;
+    left:0;
 }

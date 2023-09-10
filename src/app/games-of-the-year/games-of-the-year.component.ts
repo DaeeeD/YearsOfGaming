@@ -14,7 +14,7 @@ export class GamesOfTheYearComponent {
 
 
   years: YearsOfTheGames[] = [
-    {value: 'all-time', viewValue: 'All Time'},
+    {value: 'hall-of-fame', viewValue: 'Hall of Fame'},
     {value: 'upcoming', viewValue: 'Upcoming'},
     {value: 'last-90days', viewValue: 'Last 90 days'},
     {value: 'year-2023', viewValue: '2023'},
