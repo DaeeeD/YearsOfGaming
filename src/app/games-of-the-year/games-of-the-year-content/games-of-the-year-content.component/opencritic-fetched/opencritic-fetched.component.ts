@@ -1,14 +1,19 @@
-import { Component, Input, OnInit} from '@angular/core';
-import { Game } from '../opencritic-fetched.content.model';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { GameOfTheYearOpencriticService } from 'src/app/game-of-the-year-opencritic.service';
+import { Game } from '../opencritic-fetched.content.model';
 
 @Component({
   selector: 'app-opencritic-fetched',
   templateUrl: './opencritic-fetched.component.html',
-  styleUrls: ['./opencritic-fetched.component.css']
+  styleUrls: ['./opencritic-fetched.component.css'],
 })
-export class OpencriticFetchedComponent {
-
+export class OpencriticFetchedComponent implements OnInit, OnChanges {
   constructor(private gameService: GameOfTheYearOpencriticService) {}
 
   @Input() testOfTheYear: string = '';
@@ -18,20 +23,28 @@ export class OpencriticFetchedComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.gameService.getGames().subscribe(response => {
-      this.games = response.map( data =>
-        {
-          return new Game(
-            data.id,
-            data.name,
-            data.url,
-            data.firstReleaseDate,
-            data.topCriticScore,
-            data.tier
-          )
-        })
-    })
-    
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['testOfTheYear']) {
+      console.log(
+        'changement de ',
+        changes['testOfTheYear'].previousValue,
+        'à',
+        changes['testOfTheYear'].currentValue
+      );
+    }
+    this.gameService.getGames().subscribe((response) => {
+      this.games = response.map((data) => {
+        return new Game(
+          data.id,
+          data.name,
+          data.url,
+          data.firstReleaseDate,
+          data.topCriticScore,
+          data.tier
+        );
+      });
+    });
+  }
 }

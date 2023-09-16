@@ -1,8 +1,8 @@
 <div>
     <mat-form-field class="buttonYears">
         <mat-label>Years</mat-label>
-        <mat-select  [(ngModel)]="selectedYear" (selectionChange)="getYear()">
-            <mat-option *ngFor="let year of years" [value]="year.viewValue">
+        <mat-select  [(ngModel)]="selectedYear" (selectionChange)="getYear(selectedYear)">
+            <mat-option *ngFor="let year of years" [value]="year.value">
                 {{year.viewValue}}
             </mat-option>
         </mat-select>

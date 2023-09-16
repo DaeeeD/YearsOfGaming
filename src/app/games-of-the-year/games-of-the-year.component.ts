@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { YearsOfTheGames } from './years-of-thegames.interface';
+import { GameOfTheYearOpencriticService } from '../game-of-the-year-opencritic.service';
 
 @Component({
   selector: 'app-games-of-the-year',
@@ -7,6 +8,8 @@ import { YearsOfTheGames } from './years-of-thegames.interface';
   styleUrls: ['./games-of-the-year.component.css']
 })
 export class GamesOfTheYearComponent {
+
+  constructor(private gameFetchedService: GameOfTheYearOpencriticService) {}
 
   selectChange: boolean = false;
 
@@ -16,27 +19,28 @@ export class GamesOfTheYearComponent {
   years: YearsOfTheGames[] = [
     {value: 'hall-of-fame', viewValue: 'Hall of Fame'},
     {value: 'upcoming', viewValue: 'Upcoming'},
-    {value: 'last-90days', viewValue: 'Last 90 days'},
-    {value: 'year-2023', viewValue: '2023'},
-    {value: 'year-2022', viewValue: '2022'},
-    {value: 'year-2021', viewValue: '2021'},
-    {value: 'year-2020', viewValue: '2020'},
-    {value: 'year-2019', viewValue: '2019'},
-    {value: 'year-2018', viewValue: '2018'},
-    {value: 'year-2017', viewValue: '2017'},
-    {value: 'year-2016', viewValue: '2016'},
-    {value: 'year-2015', viewValue: '2015'},
-    {value: 'year-2014', viewValue: '2014'},
-    {value: 'year-2013', viewValue: '2013'},
+    {value: 'popular', viewValue: 'Last 90 days'},
+    {value: 'hall-of-fame/2023', viewValue: '2023'},
+    {value: 'hall-of-fame/2022', viewValue: '2022'},
+    {value: 'hall-of-fame/2021', viewValue: '2021'},
+    {value: 'hall-of-fame/020', viewValue: '2020'},
+    {value: 'hall-of-fame/2019', viewValue: '2019'},
+    {value: 'hall-of-fame/018', viewValue: '2018'},
+    {value: 'hall-of-fame/2017', viewValue: '2017'},
+    {value: 'hall-of-fame/2016', viewValue: '2016'},
+    {value: 'hall-of-fame/2015', viewValue: '2015'},
+    {value: 'hall-of-fame/2014', viewValue: '2014'},
+    {value: 'hall-of-fame/2013', viewValue: '2013'},
   ]
 
-
+  //TODO refactoriser ce BORDEL et faire en sorte que le service repasse à chaque changement de value
   //get the year to the api request to fetch the game 
   //put it in the service ? 
   
-  getYear(): string {
+  getYear(option:string): string {
 
     this.selectChange = true;
+    this.gameFetchedService.setUrlYear(option);
     return this.selectedYear;
 
   }
