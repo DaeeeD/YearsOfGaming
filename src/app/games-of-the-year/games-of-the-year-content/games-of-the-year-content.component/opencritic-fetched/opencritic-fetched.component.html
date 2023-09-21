@@ -1,18 +1,16 @@
 
 <mat-card class="cardgame">
-    <mat-card-title>Here the list of games & images</mat-card-title>
     <mat-card-content>
-        <p>{{testOfTheYear}}</p>
-        <ul>
-            <li *ngFor="let game of games">
-                <span>{{game.id}} </span>
-                <span>{{game.name}} </span>
+        <ol>
+            <mat-card *ngFor="let game of games">
+                <mat-card-title>{{game.name}} </mat-card-title>
                 <span>{{game.url}} </span>
-                <span>{{game.firstReleaseDate | date: 'd/M/yy'}} </span>
-                <span>{{game.topCriticScore | number:'1.0-0'}} </span>
-                <span>{{game.tier}} </span>
-            </li>
-        </ul>
+                <span>Release date: {{game.firstReleaseDate | date: 'd/M/yy'}} </span>
+                <span *ngIf="game.topCriticScore > 0"> Game Score: {{game.topCriticScore | number:'1.0-0'}} </span>
+                <span> Tiers: {{game.tier}} </span>
+                <img mat-card-lg-image [src]="game.images.box?.og ? 'https://img.opencritic.com/' + game.images.box.og : 'https://img.opencritic.com/' + game.images.banner.og "alt="{{game.name}}">
+            </mat-card>
+        </ol>
     </mat-card-content>
 </mat-card>
 

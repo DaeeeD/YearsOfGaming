@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { GameOfTheYearOpencriticService } from 'src/app/game-of-the-year-opencritic.service';
 import { Game } from '../opencritic-fetched.content.model';
+import { retry, catchError, pipe } from 'rxjs';
 
 @Component({
   selector: 'app-opencritic-fetched',
@@ -34,17 +35,23 @@ export class OpencriticFetchedComponent implements OnInit, OnChanges {
         changes['testOfTheYear'].currentValue
       );
     }
-    this.gameService.getGames().subscribe((response) => {
-      this.games = response.map((data) => {
-        return new Game(
-          data.id,
-          data.name,
-          data.url,
-          data.firstReleaseDate,
-          data.topCriticScore,
-          data.tier
-        );
-      });
-    });
+    this.gameService.getGames().subscribe(
+      pipe((response) => {
+        this.games = response.map((data) => {
+          return new Game(
+            data.id,
+            data.name,
+            data.url,
+            data.firstReleaseDate,
+            data.topCriticScore,
+            data.tier,
+            data.images
+          );
+        });
+      })
+    );
+    (error: any) => {
+      console.error('damned! encore raté !: ', error);
+    };
   }
 }
