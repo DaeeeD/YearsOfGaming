@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +20,6 @@ import { HomePageComponent } from './home-page/home-page.component';
     HomePageComponent,
     GamesOfTheYearComponent,
     OpencriticFetchedComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -29,9 +29,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

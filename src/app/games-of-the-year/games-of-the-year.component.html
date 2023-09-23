@@ -1,15 +1,12 @@
 <div>
     <mat-form-field class="buttonYears">
         <mat-label>Years</mat-label>
-        <mat-select  [(ngModel)]="selectedYear" (selectionChange)="getYear(selectedYear)">
-            <mat-option *ngFor="let year of years" [value]="year.value">
+        <mat-select [(ngModel)]="selectedYear" (selectionChange)="getYear(selectedYear)">
+            <mat-option *ngFor="let year of years" [value]="year.value" (click)="openDialog()">
                 {{year.viewValue}}
             </mat-option>
         </mat-select>
     </mat-form-field>
-    <div *ngIf="selectChange">
-        <app-opencritic-fetched [testOfTheYear]="selectedYear"></app-opencritic-fetched>
-    </div>
 </div>
 
 

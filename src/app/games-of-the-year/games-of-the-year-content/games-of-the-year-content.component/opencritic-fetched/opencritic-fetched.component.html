@@ -1,16 +1,18 @@
-
-<mat-card class="cardgame">
-    <mat-card-content>
-        <ol>
-            <mat-card *ngFor="let game of games">
-                <mat-card-title>{{game.name}} </mat-card-title>
-                <span>{{game.url}} </span>
-                <span>Release date: {{game.firstReleaseDate | date: 'd/M/yy'}} </span>
-                <span *ngIf="game.topCriticScore > 0"> Game Score: {{game.topCriticScore | number:'1.0-0'}} </span>
-                <span> Tiers: {{game.tier}} </span>
-                <img mat-card-lg-image [src]="game.images.box?.og ? 'https://img.opencritic.com/' + game.images.box.og : 'https://img.opencritic.com/' + game.images.banner.og "alt="{{game.name}}">
-            </mat-card>
-        </ol>
-    </mat-card-content>
-</mat-card>
+<h1 mat-dialog-title>{{testOfTheYear}}</h1>
+<mat-dialog-content>
+    <mat-card class="cardgame">
+        <mat-card-content>
+            <ol>
+                <mat-card *ngFor="let game of games">
+                    <mat-card-title>{{game.name}} </mat-card-title>
+                    <span>{{game.url}} </span>
+                    <span>Release date: {{game.firstReleaseDate | date: 'd/M/yy'}} </span>
+                    <span *ngIf="game.topCriticScore > 0"> Game Score: {{game.topCriticScore | number:'1.0-0'}} </span>
+                    <span> Tiers: {{game.tier}} </span>
+                    <img mat-card-lg-image [src]="game.images.box?.og ? 'https://img.opencritic.com/' + game.images.box.og : 'https://img.opencritic.com/' + game.images.banner.og "alt="{{game.name}}">
+                </mat-card>
+            </ol>
+        </mat-card-content>
+    </mat-card>
+</mat-dialog-content>
 
