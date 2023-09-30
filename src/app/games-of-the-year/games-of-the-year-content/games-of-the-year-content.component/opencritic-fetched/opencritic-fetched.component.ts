@@ -11,8 +11,6 @@ import { Game } from '../opencritic-fetched.content.model';
 export class OpencriticFetchedComponent implements OnInit {
   constructor(private gameService: GameOfTheYearOpencriticService) {}
 
-  @Input() testOfTheYear: string = '';
-
   games = new Array<Game>();
 
   ngOnInit(): void {

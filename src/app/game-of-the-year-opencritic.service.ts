@@ -1,8 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { GamesOfTheYearComponent } from './games-of-the-year/games-of-the-year.component';
-import { catchError } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, catchError, of } from 'rxjs';
 import { Game } from './games-of-the-year/games-of-the-year-content/games-of-the-year-content.component/opencritic-fetched.content.model';
 
 @Injectable({

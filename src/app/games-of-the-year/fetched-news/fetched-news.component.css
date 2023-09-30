@@ -1,0 +1,9 @@
+img {
+    width: fit-content;
+    height: fit-content;
+    position:absolute;
+}
+
+.card {
+    padding: 3em;
+}

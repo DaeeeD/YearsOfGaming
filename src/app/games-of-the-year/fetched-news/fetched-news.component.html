@@ -1,0 +1,11 @@
+<mat-card-content>
+    <ol>
+        <mat-card class="card" *ngFor="let article of news">
+            <mat-card-title>{{article.title}}</mat-card-title>
+            <span>{{article.publish_date | date}}</span>
+            <span>{{article.deck}}</span>
+            <a href="{{article.site_detail_url}}">go there</a>
+            <img src="{{article.image.square_tiny}}">
+        </mat-card>
+    </ol>
+</mat-card-content>

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { OpencriticFetchedComponent } from './games-of-the-year/games-of-the-year-content/games-of-the-year-content.component/opencritic-fetched/opencritic-fetched.component';
 import { GamesOfTheYearComponent } from './games-of-the-year/games-of-the-year.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FetchedNewsComponent } from './games-of-the-year/fetched-news/fetched-news.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     HomePageComponent,
     GamesOfTheYearComponent,
     OpencriticFetchedComponent,
+    FetchedNewsComponent,
   ],
   imports: [
     BrowserModule,

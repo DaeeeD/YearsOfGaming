@@ -24,14 +24,11 @@ export class GamesOfTheYearComponent {
     { value: 'hall-of-fame/2023', viewValue: '2023' },
     { value: 'hall-of-fame/2022', viewValue: '2022' },
     { value: 'hall-of-fame/2021', viewValue: '2021' },
-    { value: 'hall-of-fame/020', viewValue: '2020' },
+    { value: 'hall-of-fame/2020', viewValue: '2020' },
     { value: 'hall-of-fame/2019', viewValue: '2019' },
-    { value: 'hall-of-fame/018', viewValue: '2018' },
+    { value: 'hall-of-fame/2018', viewValue: '2018' },
     { value: 'hall-of-fame/2017', viewValue: '2017' },
     { value: 'hall-of-fame/2016', viewValue: '2016' },
-    { value: 'hall-of-fame/2015', viewValue: '2015' },
-    { value: 'hall-of-fame/2014', viewValue: '2014' },
-    { value: 'hall-of-fame/2013', viewValue: '2013' },
   ];
 
   //TODO refactoriser ce BORDEL et faire en sorte que le service repasse à chaque changement de value
