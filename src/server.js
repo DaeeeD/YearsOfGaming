@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/getGamespotArticles', async (req, res) => {
   try {
-    const response = await axios.get('http://www.gamespot.com/api/articles/?api_key=f40e9be9c9909eacb5a6de2e231cdf90cf17aa1e&limit=15&format=json&sort=publish_date:desc', {
+    const response = await axios.get('http://www.gamespot.com/api/articles/?api_key=api_key&limit=15&format=json&sort=publish_date:desc', {
       params: req.query,
     });
     res.json(response.data);
